@@ -33,13 +33,13 @@ function ShoppingCart() {
       <ul>
         {cartItems.map((item) => (
           <li key={item.id}>
-            {item.name} ({item.quantity} @ {item.price.toFixed(2)} each)
+            {item.name} ({item.quantity} @ ₹{item.price.toFixed(2)} each)
             <button onClick={() => handleAddToCart(item.id)}>Add</button>
             <input type="number" value={item.quantity} onChange={(e) => handleUpdateQuantity(item.id, parseInt(e.target.value))}/>
           </li>
         ))}
       </ul>
-      <p>Total Price: {calculateTotalPrice().toFixed(2)}</p>
+      <p>Total Price: ₹{calculateTotalPrice().toFixed(2)}</p>
     </div>
   );
 }
